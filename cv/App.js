@@ -1,47 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, FlatList } from 'react-native';
-import React, {Component}from 'react'
-import api from './src/services/api'
- import Paises from './src/pages/Paises';
- 
+ import React, {useEffect, useState} from 'react'
+ import {SafeAreaView, Text, Image} from 'react-native'
 
- 
+ export default function App(){
 
-export default class App extends Component(){
+  useEffect(() => {
+    
+  }, [])
 
-  constructor(props){
-    super(props)
-    this.state = {
-      paises:[]
-    }
-  }
-
-  async componentDidMount(){
-    const response = await api.get('/paises')
-    this.setState({
-      paises: response.data
-    })
-  }
-
-  render(){ 
-  return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-      data={this.state.paises}
-      keyExtractor={item => item.id}
-      renderItem={({item}) => <Paises/>}
-      />
-  
-    </SafeAreaView>
-  );
-}
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+return(
+   <SafeAreaView>
+    
+   </SafeAreaView>
+)
+ }
